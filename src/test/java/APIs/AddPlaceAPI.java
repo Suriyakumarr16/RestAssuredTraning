@@ -51,7 +51,7 @@ String response = given().log().all().queryParam("key", "qaclick123").header("Co
 	String getPlace = given().log().all().queryParam("key", "qaclick123").queryParam("place_id", placeID).when().get("maps/api/place/get/json").then().log().all().statusCode(200).extract().response().asString();
 	JsonPath js1 = new JsonPath(getPlace);
 	Assert.assertEquals(js1.getString("address"), newaddress);
-	
+	System.out.println("test");
 	
 	}
 }
